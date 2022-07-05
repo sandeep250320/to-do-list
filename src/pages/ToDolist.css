@@ -1,0 +1,17 @@
+.heading{
+    font-size: 24px;
+    font-weight: 500;
+    color: rgb(233, 17, 17);
+    padding: 24px;
+    margin-top: 24px;
+    align-items: center;
+}
+.inputField{
+    padding: 24px;
+    gap: 20;
+    margin-inline: 20px;
+}
+.view-button{
+    padding: 24px;
+    margin-bottom: 30px;
+}
