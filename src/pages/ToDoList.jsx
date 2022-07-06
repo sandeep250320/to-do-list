@@ -17,8 +17,8 @@ export default function ToDoList() {
   const setData = [{}];
   
   const handleViewButton = () => {
-    setClicked(true)
-    setData[{title, description, Date}];
+    setClicked(true);
+  //  setData[{title, description, Date}];
   };
   console.log(title, description);
   return (
