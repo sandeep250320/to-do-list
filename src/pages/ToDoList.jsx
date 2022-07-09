@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 export default function ToDoList() {
   const [title, setTitle] = useState([]);
   const [description, setDescription] = useState([]);
- const [clicked,setClicked]=useState(false);
+  const [clicked, setClicked] = useState(false);
   const handleTitle = (e) => {
     setTitle(e.target.value);
   };
@@ -15,10 +15,10 @@ export default function ToDoList() {
     setDescription(e.target.value);
   };
   const setData = [{}];
-  
+
   const handleViewButton = () => {
     setClicked(true);
-  //  setData[{title, description, Date}];
+    //  setData[{title, description, Date}];
   };
   console.log(title, description);
   return (
@@ -43,9 +43,8 @@ export default function ToDoList() {
           <Button variant="contained" onClick={handleViewButton}>
             View Data
           </Button>
-          </div>
-         {clicked && <TableData setRowData={setData} />}
-        
+        </div>
+        {clicked && <TableData setRowData={setData} />}
       </div>
     </>
   );

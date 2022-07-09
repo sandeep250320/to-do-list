@@ -1,35 +1,40 @@
-import {
-  Button,
-  FormControl,
-  IconButton,
-  InputAdornment,
-  InputLabel,
-  OutlinedInput,
-  TextField,
-} from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import React, { useState } from "react";
 import "./login.css";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import axios from "axios";
+// import { useDispatch } from "react-redux";
+// import getUserCredentials from "../actions/login";
+// import { getFullName, getUserName } from "../actions/userData";
 
 export default function Login() {
-  const [values, setValues] = useState({
-    password: "",
-    showPassword: false,
-  });
+  // const dispatch = useDispatch();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleChange = (values) => (e) => {
-    setValues(...values, e.target.value);
+  const onLogin = (e) => {
+    e.preventDefault();
+    const validate_user = {
+      username: 'ddev',
+      password: 'ddev',
+      date: new Date().toLocaleString(),
+    };
+    
+    // axios.post(validate_user).then((res) => {
+    //   if (res.data.authenticated === true) {
+    //     dispatch(getUserName(res.data.username));
+    //     dispatch(getFullName(res.data.username));
+    //     dispatch(getUserCredentials(res.data));
+    //   } else {
+    //     alert("Invalid Username or Password");
+    //   }
+    // });
   };
 
-  const handleClickShowPassword = () => {
-    setValues({
-      ...values,
-      showPassword: !values.showPassword,
-    });
+  const handleUserName = (e) => {
+    setUsername(e.target.value);
   };
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
   };
 
   return (
@@ -37,33 +42,24 @@ export default function Login() {
       <div className="login">
         <div className="input-login">
           <span style={{ padding: "5px 0px" }}>Enter UserName</span>
-          <TextField size= "small" id="outlined-basic"  variant="outlined" />
+          <TextField size="small" id="outlined-basic" onClick={handleUserName} variant="outlined" />
           <br />
           <span style={{ padding: "5px 0px" }}>Enter Password</span>
-          <FormControl size="small" variant="outlined">
-            <OutlinedInput
-              id="outlined-adornment-password"
-              type={values.showPassword ? "text" : "password"}
-              value={values.password}
-              onChange={handleChange("password")}
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                    edge="end"
-                  >
-                    {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              }
+          <div>
+            <TextField
+              name="password"
+              type="password"
+              fullWidth
+              size="small"
+              onChange={handlePasswordChange}
             />
-          </FormControl>
+          </div>
         </div>
         <div className="login-button">
           <Button variant="contained">Reset</Button>
-          <Button variant="contained">Login</Button>
+          <Button variant="contained" onClick={onLogin}>
+            Login
+          </Button>
         </div>
       </div>
     </>
