@@ -16,7 +16,9 @@ export default function Login() {
   const onLogin = () => {
     if (username === "ddev" && password === "ddev") {
       setLoginSuccess(true);
-     toast.success('Login Successful'); 
+      toast.success("Login Successful");
+    } else {
+      toast("Invalid Credentials");
     }
     // date: new Date().toLocaleString();
 
@@ -29,7 +31,6 @@ export default function Login() {
     //     alert("Invalid Username or Password");
     //   }
     // });
-    console.log(loginSuccess,username,password);
   };
 
   const handleUserName = (e) => {
@@ -44,32 +45,34 @@ export default function Login() {
       {loginSuccess ? (
         <ToDoList />
       ) : (
-        <div className="login">
-          <div className="input-login">
-            <span style={{ padding: "5px 0px" }}>Enter UserName</span>
-            <TextField
-              size="small"
-              id="outlined-basic"
-              onChange={handleUserName}
-              variant="outlined"
-            />
-            <br />
-            <span style={{ padding: "5px 0px" }}>Enter Password</span>
-            <div>
+        <div className="main-login">
+          <div className="login">
+            <div className="input-login">
+              <span style={{ padding: "5px 0px" }}>Enter UserName</span>
               <TextField
-                name="password"
-                type="password"
-                fullWidth
                 size="small"
-                onChange={handlePasswordChange}
+                id="outlined-basic"
+                onChange={handleUserName}
+                variant="outlined"
               />
+              <br />
+              <span style={{ padding: "5px 0px" }}>Enter Password</span>
+              <div>
+                <TextField
+                  name="password"
+                  type="password"
+                  fullWidth
+                  size="small"
+                  onChange={handlePasswordChange}
+                />
+              </div>
             </div>
-          </div>
-          <div className="login-button">
-            <Button variant="contained">Reset</Button>
-            <Button variant="contained" onClick={onLogin}>
-              Login
-            </Button>
+            <div className="login-button">
+              <Button variant="contained">Reset</Button>
+              <Button variant="contained" onClick={onLogin}>
+                Login
+              </Button>
+            </div>
           </div>
         </div>
       )}

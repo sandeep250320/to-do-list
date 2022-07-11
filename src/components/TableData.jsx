@@ -5,9 +5,14 @@ import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 
-export default function TableData({ setRowData }) {
+export default function TableData({ title, description, date}) {
   const [rowData] = useState([
-    { Title: setRowData[0], Description: setRowData[1], Date: setRowData[2] },
+    { Title: "Promo", Description: "Learn React" , Date:Date },
+    { Title: "Important work", Description: "Learn DSA" , Date:Date },
+    { Title: "Sample", Description: "Learn AI" , Date:Date },
+    { Title: "AIML", Description: "Learn ML" , Date:Date },
+    { Title: "Promo", Description: "Learn React" , Date:Date },
+    { Title: title, Description: description, Date:date }
   ]);
 
   const [columnDefs] = useState([
@@ -17,7 +22,7 @@ export default function TableData({ setRowData }) {
   ]);
 
   return (
-    <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
+    <div className="ag-theme-alpine" style={{ height: 400, width: 602,marginBottom:"30px",alignContent:"center", padding:"10px 100px"}}>
       <AgGridReact rowData={rowData} columnDefs={columnDefs}></AgGridReact>
     </div>
   );

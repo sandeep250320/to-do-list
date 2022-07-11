@@ -1,23 +1,38 @@
-.login{
-    margin-left: 30%;
-    padding: 40px;
-    margin-top: 10%;
-    border: 2px solid blue;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    height: 280px;
-    width: 500px;
-    box-shadow: 0px 0px 100px blue;
+.main-login {
+  background: url("../images/3786012.jpg") no-repeat center center fixed;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  min-height: 100%;	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  position: fixed;
 }
-.input-login{
-    padding:20px ;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.login {
+  padding: 40px;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  border: 2px solid rgb(0, 46, 211);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+  width: 500px;
+  background-color: aqua;
+  box-shadow: 0px 0px 300px rgb(249, 249, 249);
 }
-.login-button{
-    display: flex;
-    justify-content: space-around;
-    margin-top: auto;
+.input-login {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.login-button {
+  display: flex;
+  justify-content: space-around;
+  margin-top: auto;
 }

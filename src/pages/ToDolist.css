@@ -8,8 +8,9 @@
 }
 .inputField{
     padding: 24px;
-    gap: 20;
-    margin-inline: 20px;
+    margin: 40px;
+    display: flex;
+    justify-content: space-between;
 }
 .view-button{
     padding: 24px;
